@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.16.1)
 
 set(KF_VERSION "5.79.0") # handled by release scripts
 set(KF5_DEP_VERSION "5.79.0") # handled by release scripts
@@ -6,9 +6,10 @@ set(KF5_DEP_VERSION "5.79.0") # handled by release scripts
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)
 project(kirigami2 VERSION ${KF_VERSION})
 
-set(REQUIRED_QT_VERSION 5.14.0)
+set(REQUIRED_QT_VERSION 5.15.2)
 
 SET(CMAKE_CXX_STANDARD 11)
+set(CMAKE_BUILD_TYPE Debug)
 
 ###### add picture plugin ,use exiv2 #########
 find_package(ECM 5.79.0 NO_MODULE)
@@ -123,7 +124,7 @@ if(BUILD_EXAMPLES AND ANDROID)
 endif()
 
 
-ecm_find_qmlmodule(QtGraphicalEffects 1.0)
+# ecm_find_qmlmodule(QtGraphicalEffects 1.0)
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050e00)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII)

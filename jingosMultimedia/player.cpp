@@ -420,7 +420,7 @@ void Player::setListNull(bool flag)
 {
     if(m_listNull == flag) return;
     m_listNull = flag;
-    emit listNullChanged();
+    Q_EMIT listNullChanged();
 }
 
 

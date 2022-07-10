@@ -1,4 +1,4 @@
-project(kirigami)
+project(kirigami VERSION "5.79.0")
 
 if (BUILD_SHARED_LIBS)
     ecm_create_qm_loader(kirigami_QM_LOADER libkirigami2plugin_qt)

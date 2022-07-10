@@ -63,7 +63,7 @@ void MpvRenderItem::setMpvObj(MpvObject *mObj)
         if(m_pObj){
             m_pRender->setMpvObj(m_pObj);
         }
-        emit mpvObjChanged();
+        Q_EMIT mpvObjChanged();
     }
 }
 

@@ -200,7 +200,7 @@ void MediaDbusSet::setCurrentTrack(int newTrackPosition)
     m_currentTrack = m_pPlayer->getUrl().toLocalFile();
     m_currentTrackId = QDBusObjectPath(QLatin1String("/org/jingos/jingmedia/playlist/") + QString::number(newTrackPosition)).path();
 
-    emit currentTrackChanged();
+    Q_EMIT currentTrackChanged();
 
     m_metadata = getMetadataOfCurrentTrack();
     signalPropertiesChange(QStringLiteral("Metadata"), Metadata());
@@ -287,7 +287,7 @@ void MediaDbusSet::playerIsSeekableChanged()
     m_playerIsSeekableChanged = m_pPlayer->getState() == QMediaPlayer::State::PausedState || m_pPlayer->getState() == QMediaPlayer::State::PlayingState;
 
     signalPropertiesChange(QStringLiteral("CanSeek"), CanSeek());
-    emit canSeekChanged();
+    Q_EMIT canSeekChanged();
 }
 
 void MediaDbusSet::audioPositionChanged()
@@ -383,7 +383,7 @@ void MediaDbusSet::setMediaPlayerPresent(int status)
     if(!m_pPlayer) return;
     if (m_mediaPlayerPresent != status) {
         m_mediaPlayerPresent = status;
-        emit mediaPlayerPresentChanged();
+        Q_EMIT mediaPlayerPresentChanged();
 
         signalPropertiesChange(QStringLiteral("CanGoNext"), CanGoNext());
         signalPropertiesChange(QStringLiteral("CanGoPrevious"), CanGoPrevious());

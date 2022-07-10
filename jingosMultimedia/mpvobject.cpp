@@ -183,7 +183,7 @@ void MpvObject::setEofReached(int v)
             setPosition(duration());
         }
     }
-    emit eofReachedChanged();
+    Q_EMIT eofReachedChanged();
 }
 
 void MpvObject::seekPosition(double position)

@@ -1,5 +1,7 @@
 
 
+set(KIRIGAMI2_VERSION_STRING "5.79.0")
+set(KIRIGAMI2_SOVERSION "5")
 set(libkirigami_SRCS
     platformtheme.cpp
     basictheme.cpp
